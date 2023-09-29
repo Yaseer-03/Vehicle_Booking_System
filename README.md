@@ -65,7 +65,10 @@ Java (JDK): The project requires Java to run. Make sure you have Java installed 
 
 MySQL: The application uses MySQL as its database. Install and configure MySQL with the required database and tables.
 
-MySQL Connector/J: Download the MySQL Connector/J JAR file and add it to your project's classpath. You can find it here.
+MySQL Connector/J: Download the MySQL Connector/J JAR file and add it to your project's classpath.
+
+- MySQL Connector/J: Download the [MySQL Connector/J](https://dev.mysql.com/downloads/connector/j/) JAR file and add it to your project's classpath.
+
 
 ## Thank You
 
