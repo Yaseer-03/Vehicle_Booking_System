@@ -9,96 +9,9 @@ import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-class Vehicle {
-    public String registrationNumber;
-    public String type;
-    public String manufacturer;
-    public int capacity;
-    public boolean isAvailable;
-    public double distanceTravelled;
-    public int totalTrips;
-
-    public Vehicle(String registrationNumber, String type, String manufacturer, int capacity) {
-        this.registrationNumber = registrationNumber;
-        this.type = type;
-        this.manufacturer = manufacturer;
-        this.capacity = capacity;
-        this.isAvailable = true;
-        this.distanceTravelled = 0.0;
-        this.totalTrips = 0;
-    }
-
-    public String getRegistrationNumber() {
-        return registrationNumber;
-    }
-
-    public String getType() {
-        return type;
-    }
-
-    public int getCapacity() {
-        return capacity;
-    }
-
-    public boolean isAvailable() {
-        return isAvailable;
-    }
-
-    public void allocate(double distance) {
-        isAvailable = false;
-        distanceTravelled += distance;
-        totalTrips++;
-    }
-
-    public void deallocate() {
-        isAvailable = true;
-    }
-
-    public double getTotalDistance() {
-        return distanceTravelled;
-    }
-
-    public int getTotalTrips() {
-        return totalTrips;
-    }
-}
-
-class Trip {
-    public int tripId;
-    public String vehicleRegistrationNumber;
-    public double startKilometer;
-    public double endKilometer;
-    public String startTime;
-    public String endTime;
-    public String status;
-
-    public Trip(int tripId, String vehicleRegistrationNumber, double startKilometer, double endKilometer,
-            String startTime) {
-        this.tripId = tripId;
-        this.vehicleRegistrationNumber = vehicleRegistrationNumber;
-        this.startKilometer = startKilometer;
-        this.endKilometer = endKilometer;
-        this.startTime = startTime;
-        this.status = "In Progress";
-    }
-
-    public void completeTrip(String endTime) {
-        this.endTime = endTime;
-        this.status = "Completed";
-    }
-
-    public Object getStatus() {
-        return null;
-    }
-
-    public String getTripId() {
-        return null;
-    }
-}
-
-public class VehicleBookingSystem {
+public class VehicleBookingSystem extends Trip  {
     public static List<Vehicle> vehicles = new ArrayList<>();
-    public static List<Trip> trips = new ArrayList<>();
+    public static List<Trip> trips = new List<>();
     public static ExecutorService executor = Executors.newFixedThreadPool(10);
 
     public static void main(String[] args) {
