@@ -1,4 +1,6 @@
-class Trip {
+Package CoreJavaProject;
+
+class Trip extends Vehicle {
     public int tripId;
     public String vehicleRegistrationNumber;
     public double startKilometer;
